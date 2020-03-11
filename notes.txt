@@ -1,0 +1,3 @@
+// npm init --y 
+// npm i -S express
+// เอา index.html มากำหนดค่า idFacebook 
