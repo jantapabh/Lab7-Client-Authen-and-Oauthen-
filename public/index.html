@@ -35,11 +35,11 @@
 
    window.fbAsyncInit = function() {
        FB.init({
-           appId      : '220733002653231',
+           appId      : '578805086177089',
            cookie     : true,  // enable cookies to allow the server to access
                                // the session
            xfbml      : true,  // parse social plugins on this page
-           version    : 'v6.1' // The Graph API version to use for the call
+           version    : 'v6.0' // The Graph API version to use for the call
        });
 
        // Now that we've initialized the JavaScript SDK, we call
@@ -79,7 +79,28 @@
                'Thanks for logging in, ' + response.name + '!';
        });
    }
+
+
+      function getMe() {
+        FB.api('/me', function (response) {
+            console.log(JSON.stringify(response));
+            // document.getElementById('status').innerHTML = JSON.stringify(response);
+            document.getElementById('status').innerHTML = JSON.stringify(response);
+        });
+     }
+     
+     function logout() {
+        FB.logout(function(response) {
+           // console.log('Logout')
+        //    document.glocation.reload().innerHTML =
+           //     'Thanks for logging out!';
+           document.location.reload();
+        });
+     }
+
+
 </script>
+
 
 <!--
  Below we include the Login Button social plugin. This button uses
@@ -87,6 +108,28 @@
  the FB.login() function when clicked.
 -->
 
+<!-- <script>
+function getMe() {
+    FB.api('/me', function (response) {
+        console.log(JSON.stringify(response));
+        document.getElementById('status').innerHTML = JSON.stringify(response);
+    });
+ }
+ 
+ function logout() {
+    FB.logout(function(response) {
+       // console.log('Logout')
+       // document.glocation.reload().innerHTML =
+       //     'Thanks for logging out!';
+       document.location.reload();
+    });
+ }
+</script> -->
+
+<button onClick="getMe()" >Get Me </button>
+<button onClick="logout()" >Logout</button>
+  
+  
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 </fb:login-button>
 
