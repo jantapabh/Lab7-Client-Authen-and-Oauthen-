@@ -22,7 +22,6 @@ const out = `
 </html> 
 
 `
-
 router.route('/')
    .get((req, res) => {
        res.send(out)
@@ -47,4 +46,5 @@ router.route('/')
        });
    })
 
+   
 app.listen(80, () => console.log('Server is ready!'))
