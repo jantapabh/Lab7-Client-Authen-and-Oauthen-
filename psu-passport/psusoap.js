@@ -35,9 +35,13 @@ router.route('/')
                user.password = req.body.password
 
                client.GetStaffDetails(user, function (err, response) {
+
                    // client.GetStudentDetails(args, function(err, response) {
+                       
                    if (err) console.error(err);
+
                    else {
+
                        console.log(response);
                        res.send(response);
                    }
@@ -46,5 +50,5 @@ router.route('/')
        });
    })
 
-   
+
 app.listen(80, () => console.log('Server is ready!'))
