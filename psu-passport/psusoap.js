@@ -8,6 +8,7 @@ const router = express.Router()
 app.use(bodyParser.urlencoded({extended: false}), router)
 app.use(bodyParser.json, router)
 
+
 const out = `
 <html>
 <body>
@@ -20,6 +21,7 @@ const out = `
 </body>
 </html> 
 `
+
 
 router.route('/')
    .get((req, res) => {
